@@ -1,0 +1,29 @@
+<div ng-controller="ListCtrl" class="col-lg-12">
+	<div class="container">
+		Поиск: <input ng-model="query">
+		<h2>Performances</h2>
+		<ul class="list-group">
+			<li ng-repeat="performance in performances | filter:query" class="list-group-item">
+				<div class="panel panel-default">
+					<div class="panel-heading">#{{performance.id}} <strong>{{performance.name}}</strong></div>
+					<div class="panel-body">
+						<dl>
+							<dt>Описание</dt>
+							<dd>{{performance.description}}</dd>
+						</dl>
+						<dl>
+							<dt>Начало</dt>
+							<dd>{{performance.start}}</dd>
+						</dl>
+						<dl>
+							<dt>Окончание</dt>
+							<dd>{{performance.stop}}</dd>
+						</dl>
+					</div>
+					<div class="panel-footer">{{performance.place}}</div>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+</div>
